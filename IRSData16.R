@@ -45,6 +45,15 @@ irs_example$zipcode <- irs_example$zip5
 
 irs_example <- select(irs_example, -zip5)
 
+# Include free zip code database
+
+zipcodedb <- read_csv("C:/Users/evd19/Downloads/zip-codes-database-FREE-csv/zip-codes-database-FREE.csv")
+
+zipcodedb <- rename(zipcodedb, zipcode=ZipCode)
+
+irs_data_2016 <- merge(irs_example,zipcodedb,by='zipcode',all.x=T,all.y=F)
 
 
-write.csv(irs_example, 'C:/users/eric vondohlen/dropbox/NCA/agidata.csv', row.names = F)
+
+
+write.csv(irs_example, 'C:/users/evd19/desktop/IRSData16/agidata16.csv', row.names = F)
