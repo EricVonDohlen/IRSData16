@@ -55,5 +55,6 @@ irs_data_2016 <- merge(irs_example,zipcodedb,by='zipcode',all.x=T,all.y=F)
 
 
 
+write.csv(irs_data_2016, 'C:/users/evd19/desktop/IRSData16/irs_data_2016.csv', row.names = F)
 
 write.csv(irs_example, 'C:/users/evd19/desktop/IRSData16/agidata16.csv', row.names = F)
